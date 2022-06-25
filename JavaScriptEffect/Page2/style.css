@@ -1,0 +1,390 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Kanit", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 120px;
+}
+
+header > h1,
+header > a {
+  color: white;
+  margin: 0;
+  text-shadow: 0px 0px 5px #000000;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: cornflowerblue;
+  z-index: 10;
+}
+
+nav a {
+  padding: 10px;
+  margin-left: 10px;
+  border: none;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+a:hover {
+  color: white;
+  background-color: slateblue;
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* TextKeyboardEffect */
+div.textKeyboardEffect-container {
+  background-color: #333;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+div.textKeyboardEffect-control {
+  position: absolute;
+  background: whitesmoke;
+  padding: 10px 20px;
+  bottom: 20px;
+  font-size: 18px;
+}
+
+input {
+  width: 50px;
+  padding: 5px;
+  font-size: 18px;
+  background-color: darksalmon;
+  border: none;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+}
+
+.text {
+  color: #fff;
+}
+
+/* ExpandCardEffect */
+.expandCardEffect-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+}
+
+.expandCardEffect-content {
+  display: flex;
+  width: 90vw;
+}
+.item {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 80vh;
+  border-radius: 50px;
+  cursor: pointer;
+  color: whitesmoke;
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 1s ease-in-out;
+  opacity: 0.7;
+}
+.item:hover {
+  opacity: 1;
+}
+.item.active {
+  flex: 5;
+  opacity: 1;
+}
+
+.item h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+.item.active h3 {
+  padding: 25px;
+  opacity: 1;
+  background-color: black;
+  border-radius: 50px;
+}
+/* SplitPageContent */
+.splitPageContent-container {
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.splitPage-content {
+  /* position: relative; */
+  width: 100%;
+  height: 100%;
+  background-color: #333;
+}
+
+.contents {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.contents.left {
+  left: 0;
+  background-image: url("https://github.com/kongruksiamza/javascript-workshop/blob/main/Workshop%2023%20-%20SplitPageContent/image/Content1.jpg?raw=true");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.contents.right {
+  right: 0;
+  background-image: url("https://github.com/kongruksiamza/javascript-workshop/blob/main/Workshop%2023%20-%20SplitPageContent/image/Content2.jpg?raw=true");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contents::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.splitPage-text {
+  font-size: 4rem;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+.btn {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  transform: translateX(-50%);
+  color: #fff;
+  text-decoration: none;
+  padding: 1.5rem;
+  border: #fff solid 0.2rem;
+  font-size: 1.2rem;
+  width: 15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.contents.left .btn:hover {
+  background-color: orangered;
+}
+.contents.right .btn:hover {
+  background-color: blue;
+}
+
+.hover-left .left {
+  width: 65%;
+}
+.hover-left .right {
+  width: 35%;
+}
+
+.hover-right .left {
+  width: 35%;
+}
+.hover-right .right {
+  width: 65%;
+}
+
+.contents.left,
+.contents.right {
+  transition: all 0.5s ease-in-out;
+}
+
+/* ProductScrollAnimation */
+.productScrollAnimation-container {
+  background-color: #efedd6;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  text-align: center;
+  padding-bottom: 200px;
+  height: 100vh;
+}
+
+.productScrollAnimation-header {
+  margin: 10px;
+}
+
+.productScrollAnimation-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.category {
+  background-size: cover;
+  color: #fff;
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+  transform: translateX(300%);
+  transition: transform 0.4s ease;
+}
+
+.category h2 {
+  font-size: 25px;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.category:nth-of-type(even) {
+  transform: translateX(-300%);
+}
+
+.category.active {
+  transform: translateX(0);
+}
+
+/* InfiniteScroll */
+:root {
+  --primary-color: #495057;
+}
+
+.infiniteScroll-container {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--primary-color);
+}
+
+.infiniteScroll-text {
+  font-family: cursive;
+  font-size: 4em;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.gallery > img {
+  flex: 1;
+  object-fit: cover;
+}
+
+.gallery > img:nth-child(3n) {
+  flex: 2;
+}
+
+.loader {
+  display: flex;
+  margin: 50px;
+
+  visibility: hidden;
+}
+
+.loader.visible {
+  visibility: visible;
+}
+
+.dot-loader {
+  height: 20px;
+  width: 20px;
+
+  border-radius: 50%;
+  margin: 0 20px;
+
+  background-color: var(--primary-color);
+  position: relative;
+  animation: 1.2s scale ease-in-out infinite;
+}
+
+.dot-loader:nth-child(2) {
+  animation: 1.2s scale ease-in-out infinite 0.15s;
+}
+
+.dot-loader:nth-child(3) {
+  animation: 1.2s scale ease-in-out infinite 0.3s;
+}
+
+@keyframes scale {
+  0%,
+  40%,
+  100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+}
+
+/* response-screen */
+@media screen and (max-width: 800px) {
+  body {
+    font-size: 14px;
+  }
+  nav a {
+    padding: 7px;
+    margin-left: 7px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 11px;
+  }
+  nav a {
+    padding: 4px;
+    margin-left: 4px;
+    font-size: 11px;
+  }
+}
